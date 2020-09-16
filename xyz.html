@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script>
+      const name = 'SOUP' //여기에 자기 엔트리아이디를 입력하세요
+      const userid = '5f4eed6255a42f003643687e' //여기에 자기 유저아이디를 입력하세요 (엔트리콘솔창에 user._id를 치면 자신의 유저아이디를 볼수있어요)
+      const gitname = 'SOUP1222' //여기에 자기 깃허브아이디를 입력하세요 (깃허브계정이 없으면 그냥 avocad5를 입력하세요<ㅍ)
+      const nickname = 'Lee Soobin' //여기에 자기 별명을 입력하세요 
+      const myment = '프로그램으로 세상을 편하게' //여기에 상태메시지를 입력하세요 
+      const mywork = '알까기의왕' //여기에 자신의 대표작품을 입력하세요
+      const career = '2년' //여기에 자신의 경력을 입력하세요
+      const explanation = '스인 : 2' //여기에 자기소개를 입력하세요 //[문답챌린지]벤츠남의 22문답
+      const maincolor = '#00ffff' //여기에 메인컬러를 입력하세요 #87FFB7
+      const subcolor = '#00ffff' //여기에 서브컬러를 입력하세요
+      const projectname = ['SIGMA v2','소련어 입력기','Atom Graphic','CHEMISTRY','AZEИT','[문답챌린지]벤츠남의 22문답']; //여기에 자기 엔트리작품 이름을 입력하세요 (저는 3개만 했지만 여러분은 엄청 많이 하셔도 되요)
+      const projectment = ['디스코드를 편리하게 SIGMAv2','편하게 러시아어를','상상도 못한 원자로 디자인을','엔트리 화학을 다시 한 번 정의하다.','최초의 실시간 FPS','ENTRY 문답챌린지'] //여기에 자기 엔트리작품 소개를 입력하세요 
+      const projectlink = ['https://discord.com/api/oauth2/authorize?client_id=753432008667037706&permissions=1544027232&scope=bot','http://naver.me/x1XTID5t','http://naver.me/57pko2bj','비공개','비공개','http://naver.me/FmTY3pWm'] //여기에 자기 엔트리작품 id를 입력하세요
+      const projectid = ['5f60b7fe06ce931759642613','5f236ef33f3653001afc9632','5f07c0aabfb7af0064b5cd73','5f4eee782d0d36a495936115','5f1012e242b29e002469b46e','5f046d7974a2ef0049bbe70d'] //여기에 자기 엔트리작품 id를 입력하세요
+      const theme = 'light' //light또는 dark를 입력하세요
+      //5f4eee782d0d36a495936115  //5f1012e242b29e002469b46e //5f046d7974a2ef0049bbe70d  //http://naver.me/FmTY3pWm  //https://www.facebook.com/profile.php?id=100019295905562
+      
+      function load(){
+        for(var i = 0; i<projectname.length; i++){
+          document.getElementsByClassName('project')[0].innerHTML += `<a href="${projectlink[i]}"><img class="pimg" src="https://playentry.org/uploads/thumb/${projectid[i].substring(0,4)}/${projectid[i]}.png"><div class="pdiv"><p class="pname"><strong>${projectname[i]}</strong></p><p class="pment">${projectment[i]}</p></div></a>`
+        }
+        var avatar = `https://playentry.org/uploads/profile/${userid.substring(0,2)}/${userid.substring(2,4)}/avatar_${userid}.png`
+        document.title = `${nickname}의 공식사이트`
+        document.querySelector("body > div.name").innerHTML = name
+        document.querySelector("body > div.ment").innerHTML = myment
+        document.querySelector("body > div.container > svg > path").style.fill = maincolor 
+        document.querySelector("body > svg.foot > path").style.fill = subcolor
+        document.querySelector("body > div.profile > a").href = `https://playentry.org/${name}`
+        document.querySelector("body > div.profile > a").innerHTML = `<img src="${avatar}">`
+        document.querySelector("body > div.profile > div").innerHTML = `<p><strong>${name}</strong></p><p>${nickname}</p><p>${explanation}</p>`
+        document.querySelector("body > div.footer").innerHTML = `<a href="https://github.com/${gitname}"><span>Github</span></a><a href="https://playentry.org/soup_official#!/"><span>Entry
+        (soup)</span></a><a href="https://playentry.org/benznam#!/"><span>Entry
+        (benznam)</span></a><a href="https://discord.gg/EHCBbWz"><span>Discord</span></a><span></span></a><a href="https://wizlab.net/userpage/2055"><span>Wizlab</span><a href="https://www.facebook.com/profile.php?id=100019295905562"><span>Facebook</span>`
+        document.querySelector("body > div.footer").style.backgroundColor = subcolor
+        var css = `.project a div:hover{background-color: ${maincolor};}`
+        var style = document.createElement('style');
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
+        }
+        document.getElementsByTagName('head')[0].appendChild(style);
+      }
+      function darkmode(){
+        var p = document.getElementsByTagName('p')
+        for(var i = 0; i<p.length; i++){
+          p[i].style.color = 'white'
+        }
+        var pdiv = document.getElementsByClassName('pdiv')
+        var pimg = document.getElementsByClassName('pimg')
+        for(var i = 0; i<pdiv.length; i++){
+          pdiv[i].style.backgroundColor = '#505050'
+          pdiv[i].style.boxShadow = '0 0 30px -15px #111111'
+          pimg[i].style.boxShadow = '0 0 30px -15px #111111'
+        }
+        document.querySelector("body").style.backgroundColor = '#1E1E1E'
+        document.querySelector("body > div.projecttext").style.color = 'white'
+        document.querySelector("body > div.profile > a > img").style.boxShadow = '0 0 30px -15px #111111'
+      }
+    </script>
+    <title>자기소개</title>
+    <style>
+      @font-face { font-family: 'GmarketSansBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff'); font-weight: normal; font-style: normal; }
+      body{
+        margin: 0;
+        background-color : #FcFcFc;
+      }
+      .container {
+        z-index:-1;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        vertical-align: middle;
+        overflow: hidden;
+      }
+      .head {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .svgpath{
+        stroke: none;
+        fill:#87FFB7;
+      }
+      .name{
+        margin-top:-95%;
+        display: flex;
+        justify-content: center;
+        font-family: "GmarketSansBold";
+        font-size: 570%;
+      }
+      .ment{
+        display: flex;
+        justify-content: center;
+        color: #00ffff;
+        font-size: 20px;
+      }
+      .profile{
+        display: flex;
+        justify-content: center;
+        margin-top: 20%;
+      }
+      .profile a{
+        margin-right: 10%;
+      }
+      .profile a img{
+        width: 400px;
+        height: 400px;
+        box-shadow: 0 0 30px -10px #A0A0A0;
+        border-radius: 30px;
+        border: 2px solid black;
+      }
+      .profile p{
+        font-size: 25px;
+      }
+      .projecttext{
+        font-size: 50px;
+        text-align: center;
+        margin-top: 10%;
+        font-family: "GmarketSansBold";
+      }
+      .project{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: -2%;
+        margin-bottom: 10%;
+      }
+      .project a{
+        margin-top: 100px;
+        width: 450px;
+        height: 300px;
+        margin-left: 50px;
+        margin-right: 50px;
+        text-align: center;
+        text-decoration:none;
+      }
+      .project a img{
+        width: 400px;
+        height: 225px;
+        border-radius: 30px;
+        box-shadow: 0 0 30px -15px #A0A0A0;
+        border: 2px solid black;
+      }
+      .project a div{
+        height: 170px;
+        border-radius: 30px;
+        box-shadow: 0 0 30px -15px #A0A0A0;
+        margin-top: -80px;
+        background-color: white;
+        transition: background-color 0.5s;
+      }
+      .project a div .pname{
+        color: black;
+        padding-top: 70px;
+        font-size: 20px;
+      }
+      .project a div .pment{
+        color: black;
+        margin-top: -10px;
+      }
+      .foot{
+        position: relative;
+        -moz-transform: scaleY(-1);
+        -o-transform: scaleY(-1);
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+        filter: FlipV;
+        -ms-filter: "FlipV";
+        fill: #BFFFC3;
+        margin-top: -1900px;
+        z-index: -10;
+      }
+      .footer{
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        background-color: #BFFFC3;
+        margin-top: -100px;
+      }
+      .footer a{
+        border: 2px solid black;
+        border-radius: 5px;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        font-size: 20px;
+        padding-top: 15px;
+        margin-left: 5px;
+        margin-right: 5px;
+        transition: 0.5s;
+        color: black;
+        text-decoration:none;
+      }
+      .footer a:hover{
+        background-color: black;
+        border-color: black;
+        color: white;
+        transition: 0.5s;
+      }
+    </style>
+    <head>
+</head>
+  </head>
+  <body>
+    <div class="container">
+      <svg class="head" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+        <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" class="svgpath"></path>
+      </svg>
+    </div>
+    <div class="name">
+      avocad5
+    </div>
+    <div class="ment">
+      더 참신하게, 더 재미있게, 더 멋지게
+    </div>
+    <div class="profile">
+      <a href="https://playentry.org/avocad5" class="proimg"></a>
+      <div class="about">
+        <p>이름 : avocad5</p>
+        <p>별명 : 아보카도</p>
+        <p>엔트리 경력 : 2년</p>
+        <p>웹개발 경력 : 6개월</p>
+        <p>소개 : 코딩과 수학을 좋아하는 평범한 중1</p>
+      </div>
+    </div>
+    <div class="projecttext">MY PROJECTS</div>
+    <div class="project">
+
+    </div>
+    <svg class="foot" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+      <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z"></path>
+      <div class="footer">
+      </div>
+    </svg>
+  </body>
+  <script>load();if(theme=='dark'){darkmode();}</script>
+</html>
+
+
+//https://wizlab.net/userpage/11958
